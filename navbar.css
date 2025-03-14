@@ -1,0 +1,60 @@
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
+    height: 5%;
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Spacing to prevent overlap with content */
+body {
+    padding-top: 100px; /* Ensures content starts below navbar */
+}
+
+/* Logo */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #c8e6c9;
+}
+
+/* Logout Button */
+.logout-btn {
+    background: red;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background: darkred;
+}
