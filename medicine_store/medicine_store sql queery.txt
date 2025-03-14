@@ -1,0 +1,138 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Mar 13, 2025 at 03:27 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `medicine_store`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `customer_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `address` text NOT NULL,
+  `total_price` decimal(10,2) NOT NULL,
+  `tracking_id` varchar(50) NOT NULL,
+  `order_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `customer_name`, `email`, `phone`, `address`, `total_price`, `tracking_id`, `order_date`) VALUES
+(1, 'BhintadeAtharva Prakash', 'atharvabhintade@gmail.com', '07977378490', 'Ganesh mandir road, Thane, Maharashtra, 400706, India', 1350.00, 'TRK67C85792E6123', '2025-03-05 13:54:26'),
+(2, 'BhintadeAtharva Prakash', 'atharvabhintade@gmail.com', '07977378490', 'Ganesh mandir road, Thane, Maharashtra, 400706, India', 0.00, 'TRK67C857FB92904', '2025-03-05 13:56:11'),
+(3, 'BhintadeAtharva Prakash', 'atharvabhintade@gmail.com', '07977378490', 'Ganesh mandir road, Thane, Maharashtra, 400706, India', 450.00, 'TRK67C8583A72866', '2025-03-05 13:57:14'),
+(4, 'BhintadeAtharva Prakash', 'atharvabhintade@gmail.com', '07977378490', 'Ganesh mandir road, Thane, Maharashtra, 400706, India', 0.00, 'TRK67C85975E5BCC', '2025-03-05 14:02:29'),
+(5, 'BhintadeAtharva Prakash', 'atharvabhintade@gmail.com', '07977378490', 'Ganesh mandir road, Thane, Maharashtra, 400706, India', 450.00, 'TRK67C8598F77D2D', '2025-03-05 14:02:55'),
+(6, 'BhintadeAtharva Prakash', 'atharvabhintade@gmail.com', '07977378490', 'Ganesh mandir road, Thane, Maharashtra, 400706, India', 350.00, 'TRK67C85A462DE3F', '2025-03-05 14:05:58'),
+(7, 'BhintadeAtharva Prakash', 'atharvabhintade@gmail.com', '07977378490', 'Ganesh mandir road, Thane, Maharashtra, 400706, India', 780.00, 'TRK67C85B83985FB', '2025-03-05 14:11:15'),
+(8, 'BhintadeAtharva Prakash', 'atharvabhintade@gmail.com', '07977378490', 'Ganesh mandir road, Thane, Maharashtra, 400706, India', 350.00, 'TRK67C85B9A0178B', '2025-03-05 14:11:38'),
+(9, 'Atharva Prakash Bhintade', 'atharvabhintade@gmail.com', '7977378490', 'hhj, mumbai, maharashtra, 400706, India', 450.00, 'TRK67C85C3982078', '2025-03-05 14:14:17'),
+(10, 'Atharva Prakash Bhintade', 'atharvabhintade@gmail.com', '7977378490', 'hhj, mumbai, maharashtra, 400706, India', 1200.00, 'TRK67C85E93A6CA2', '2025-03-05 14:24:19'),
+(11, 'Atharva Prakash Bhintade', 'atharvabhintade@gmail.com', '7977378490', 'hhj, mumbai, maharashtra, 400706, India', 2250.00, 'TRK67C95A14B9F11', '2025-03-06 08:17:24'),
+(12, 'Atharva Prakash Bhintade', 'atharvabhintade@gmail.com', '07977378490', 'hhj, mumbai, maharashtra, 400706, India', 7080.00, 'TRK67C95BAA2B642', '2025-03-06 08:24:10'),
+(13, 'BhintadeAtharva Prakash', 'atharvabhintade@gmail.com', '07977378490', 'Ganesh mandir road, Thane, Maharashtra, 400706, India', 450.00, 'TRK67C9A61C5EF57', '2025-03-06 13:41:48'),
+(14, 'BhintadeAtharva Prakash', 'atharvabhintade@gmail.com', '07977378490', 'Ganesh mandir road, Thane, Maharashtra, 400706, India', 0.00, 'TRK67C9A63DBC812', '2025-03-06 13:42:21'),
+(15, 'BhintadeAtharva Prakash', 'atharvabhintade@gmail.com', '07977378490', 'Ganesh mandir road, Thane, Maharashtra, 400706, India', 0.00, 'TRK67C9A645C68DB', '2025-03-06 13:42:29'),
+(16, 'Atharva Prakash Bhintade', 'atharvabhintade@gmail.com', '07977378490', 'hhj, mumbai, maharashtra, 400706, India', 2250.00, 'TRK67C9BBF8188F2', '2025-03-06 15:15:04'),
+(17, 'Atharva Prakash Bhintade', 'atharvabhintade@gmail.com', '07977378490', 'hhj, mumbai, maharashtra, 400706, India', 1150.00, 'TRK67CAD09E554D2', '2025-03-07 10:55:26'),
+(18, 'Atharva Prakash Bhintade', 'atharvabhintade@gmail.com', '07977378490', 'hhj, mumbai, maharashtra, 400706, India', 800.00, 'TRK67CAD1F2A786D', '2025-03-07 11:01:06'),
+(19, 'Atharva Prakash Bhintade', 'atharvabhintade@gmail.com', '07977378490', 'hhj, mumbai, maharashtra, 400706, India', 2600.00, 'TRK67CAFC72C59F2', '2025-03-07 14:02:26'),
+(20, 'Atharva Prakash Bhintade', 'atharvabhintade@gmail.com', '07977378490', 'hhj, mumbai, maharashtra, 400706, India', 2500.00, 'TRK67CC25AA42814', '2025-03-08 11:10:34'),
+(21, 'Atharva Prakash Bhintade', 'atharvabhintade@gmail.com', '07977378490', 'hhj, mumbai, maharashtra, 400706, India', 450.00, 'TRK67CFBF91592B0', '2025-03-11 04:44:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `image` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `description`, `price`, `image`) VALUES
+(1, 'Thiophanate Methyl', 'Fungicide for treating black rot in apples', 1095.00, 'images\\Thiophanate-Methyl..png'),
+(2, 'SAAF Fungicide', 'Effective against apple scab and other fungal diseases', 640.00, 'images\\Carbendazim..png'),
+(3, 'Engimins Cu', 'Copper-based bactericide for cassava bacterial blight', 450.00, 'images\\Copper-based bactericides..png'),
+(4, 'Neem Oil', 'Natural insecticide for controlling whiteflies in cassava', 350.00, 'images\\Neem oil.png'),
+(5, 'Imidacloprid', 'Insecticide for managing whitefly-induced leaf curl virus', 780.00, 'images\\Imidacloprid.png'),
+(6, 'TAG-COP Blue Copper', 'Copper oxychloride fungicide for coffee rust', 800.00, 'images\\Copper Oxychloride..png'),
+(7, 'Carbendazim', 'Fungicide for treating anthracnose in mangoes', 600.00, 'images\\Carbendazim..png'),
+(8, 'Iprodione', 'Fungicide for brown spot disease in rice', 550.00, 'images\\Iprodione..png'),
+(9, 'Tricyclazole', 'Fungicide for leaf blast disease in rice', 620.00, 'images\\Triadimefon..png'),
+(10, 'Copper Oxychloride', 'Fungicide for controlling algal leaf spot in tea', 750.00, 'images\\Copper Oxychloride..png'),
+(11, 'Mancozeb', 'Fungicide for early blight disease in tomatoes', 590.00, 'images\\Mancozeb.png'),
+(12, 'Metalaxyl', 'Fungicide for late blight disease in tomatoes', 780.00, 'images\\Metalaxyl..png'),
+(13, 'Propiconazole', 'Fungicide for brown rust in wheat', 850.00, 'images\\Propiconazole..png'),
+(14, 'Chlorothalonil', 'Fungicide for Septoria leaf spot in wheat', 900.00, 'images\\Chlorothalonil..png');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `tracking_id` (`tracking_id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
