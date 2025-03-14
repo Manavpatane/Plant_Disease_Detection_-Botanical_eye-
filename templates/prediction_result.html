@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="static\css\style.css">
+    <link rel="stylesheet" href="static\css\navbar.css">
+  
+
+</head>
+<body>
+     <!-- Navigation Bar -->
+   <nav class="navbar">
+    <div class="logo">Botanical Eye</div>
+    <ul class="nav-links">
+        <li><a href="http://localhost:8080/home/home.html">Home</a></li>
+        <li><a href="http://127.0.0.1:5000/">Prediction</a></li>
+        <li><a href="http://127.0.0.1:5000/disease-prediction">Plot Graph</a></li>
+        <li><a href="http://localhost:8080/fetch_plant_details/search_disease.html">Plant Info</a></li>
+        <li><a href="http://localhost:8080/medicine_store/">Plant Medicine Store</a></li>
+        <li><a href="http://localhost:8080/login_signup_page/index.html" class="logout-btn">Logout</a></li>
+    </ul>
+</nav>
+    <h1>Prediction Result</h1>
+    <p>The detected disease is: <strong>{{ prediction }}</strong></p>
+    <button><a href="/">Back to Home</a></button>
+</body>
+</html>

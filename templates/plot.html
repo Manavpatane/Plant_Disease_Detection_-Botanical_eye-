@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Disease Probability Plot</title>
+    <link rel="stylesheet" href="static\css\style.css">
+    <link rel="stylesheet" href="static\css\navbar.css">
+    <style>
+        body {
+        background: url('static/images/thick-forest-3840x2160-14776.jpg') no-repeat center center/cover;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        position: relative;
+    }
+    </style>
+
+</head>
+<body>
+     <!-- Navigation Bar -->
+   <nav class="navbar">
+    <div class="logo">Botanical Eye</div>
+    <ul class="nav-links">
+        <li><a href="http://localhost:8080/home/home.html">Home</a></li>
+        <li><a href="http://127.0.0.1:5000/">Prediction</a></li>
+        <li><a href="http://127.0.0.1:5000/disease-prediction">Plot Graph</a></li>
+        <li><a href="http://localhost:8080/fetch_plant_details/search_disease.html">Plant Info</a></li>
+        <li><a href="http://localhost:8080/medicine_store/">Plant Medicine Store</a></li>
+        <li><a href="http://localhost:8080/login_signup_page/index.html" class="logout-btn">Logout</a></li>
+    </ul>
+</nav>
+    <h1>Disease Probability Plot</h1>
+    <img src="data:image/png;base64,{{ plot_url }}" alt="Disease Probability Plot">
+    <br>
+    <a href="/disease-prediction">Back</a>
+    <a href="/">Home</a>
+</body>
+</html>

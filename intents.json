@@ -1,0 +1,207 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "Hello",
+                "Hey",
+                "How are you?",
+                "What's up?",
+                "Good morning",
+                "Good evening",
+                "Hi there!"
+            ],
+            "responses": [
+                "Hello! How can I assist you today?",
+                "Hi there! How can I help you?",
+                "Hey! What can I do for you?"
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Bye",
+                "See you later",
+                "Goodbye",
+                "Take care",
+                "I'm leaving",
+                "Catch you later",
+                "Farewell"
+            ],
+            "responses": [
+                "Goodbye! Have a great day ahead.",
+                "See you later! Feel free to return if you need help.",
+                "Take care! Wishing you a wonderful day."
+            ]
+        },
+        {
+            "tag": "Apple__black_rot",
+            "patterns": [
+                "What is black rot in apples?",
+                "Why are my apples turning black?",
+                "What causes black rot on apple fruits?",
+                "How can I treat black rot in apples?"
+            ],
+            "responses": [
+                "Black rot in apples is caused by the fungus Botryosphaeria obtusa. It appears as black spots or rotting areas on fruits. Treat with fungicides and remove infected fruits."
+            ]
+        },
+        {
+            "tag": "Apple__healthy",
+            "patterns": [
+                "What are the signs of a healthy apple tree?",
+                "How do I know if my apple tree is healthy?",
+                "What should a healthy apple tree look like?"
+            ],
+            "responses": [
+                "A healthy apple tree has green, unblemished leaves, strong branches, and no visible signs of diseases like spots, rot, or rust."
+            ]
+        },
+        {
+            "tag": "Apple__rust",
+            "patterns": [
+                "What is rust on apple leaves?",
+                "Why do my apple leaves have orange spots?",
+                "How to treat rust disease in apple trees?"
+            ],
+            "responses": [
+                "Apple rust is caused by a fungal infection, often cedar-apple rust. It appears as orange or yellow spots on leaves. Treat with fungicides and remove nearby infected plants."
+            ]
+        },
+        {
+            "tag": "Apple__scab",
+            "patterns": [
+                "What causes scab on apples?",
+                "Why do my apples have dark spots?",
+                "How to prevent apple scab disease?"
+            ],
+            "responses": [
+                "Apple scab is caused by the fungus Venturia inaequalis. It creates dark, scabby patches on apples. Prune infected branches and use fungicides for treatment."
+            ]
+        },
+        {
+            "tag": "Cassava__bacterial_blight",
+            "patterns": [
+                "What is bacterial blight in cassava?",
+                "How to treat bacterial blight in cassava?",
+                "Why are my cassava plants wilting?"
+            ],
+            "responses": [
+                "Cassava bacterial blight is caused by Xanthomonas bacteria, leading to leaf wilting and stem rot. Remove infected plants and apply copper-based fungicides."
+            ]
+        },
+        {
+            "tag": "Cassava__healthy",
+            "patterns": [
+                "How to identify healthy cassava plants?",
+                "What should a healthy cassava plant look like?"
+            ],
+            "responses": [
+                "Healthy cassava plants have green, vibrant leaves, strong stems, and no signs of wilting, spots, or rotting."
+            ]
+        },
+        {
+            "tag": "Tomato__late_blight",
+            "patterns": [
+                "What is late blight in tomatoes?",
+                "How can I treat late blight on my tomato plants?",
+                "Why are my tomato plants wilting and rotting?"
+            ],
+            "responses": [
+                "Tomato late blight is caused by the pathogen Phytophthora infestans, which leads to dark spots on leaves and fruit rot. Treat with fungicides and remove infected plants."
+            ]
+        },
+        {
+            "tag": "Tomato__healthy",
+            "patterns": [
+                "What are the signs of a healthy tomato plant?",
+                "How do I know my tomato plant is healthy?",
+                "What does a healthy tomato plant look like?"
+            ],
+            "responses": [
+                "Healthy tomato plants have green, unblemished leaves, strong stems, and no signs of spots, wilting, or fungal infections."
+            ]
+        },
+        {
+            "tag": "Rice__brown_spot",
+            "patterns": [
+                "What causes brown spots on rice leaves?",
+                "Why does my rice plant have brown spots?",
+                "How to treat brown spot disease in rice?"
+            ],
+            "responses": [
+                "Brown spot in rice is caused by the fungus Bipolaris oryzae. It creates brown lesions on leaves and reduces yield. Treat with fungicides and maintain proper soil nutrients."
+            ]
+        },
+        {
+            "tag": "Rice__healthy",
+            "patterns": [
+                "How to identify healthy rice plants?",
+                "What should a healthy rice plant look like?",
+                "How do I know if my rice plants are healthy?"
+            ],
+            "responses": [
+                "Healthy rice plants have green leaves, no signs of spots, and grow upright with strong stems."
+            ]
+        },
+        {
+            "tag": "Corn__northern_leaf_blight",
+            "patterns": [
+                "What is northern leaf blight in corn?",
+                "How to treat northern leaf blight in corn?",
+                "Why do my corn leaves have brown streaks?"
+            ],
+            "responses": [
+                "Northern leaf blight in corn is caused by the fungus Exserohilum turcicum, creating elongated brown lesions. Treat with fungicides and rotate crops for prevention."
+            ]
+        },
+        {
+            "tag": "Corn__healthy",
+            "patterns": [
+                "What does a healthy corn plant look like?",
+                "How to ensure my corn plants are healthy?",
+                "How do I identify healthy corn plants?"
+            ],
+            "responses": [
+                "Healthy corn plants have upright growth, green leaves, and no signs of leaf spots or discoloration."
+            ]
+        },
+        {
+            "tag": "Tea__anthracnose",
+            "patterns": [
+                "What causes anthracnose in tea plants?",
+                "How to treat anthracnose disease in tea?",
+                "Why do my tea leaves have brown spots?"
+            ],
+            "responses": [
+                "Anthracnose in tea plants is caused by fungal pathogens, leading to brown spots and leaf drop. Treat with fungicides and prune infected parts."
+            ]
+        },
+        {
+            "tag": "Tea__healthy",
+            "patterns": [
+                "What should a healthy tea plant look like?",
+                "How to identify healthy tea leaves?",
+                "How do I ensure my tea plants are healthy?"
+            ],
+            "responses": [
+                "Healthy tea plants have green, glossy leaves with no signs of spots, discoloration, or pests."
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "I appreciate it",
+                "Thanks a lot"
+            ],
+            "responses": [
+                "You're welcome! Let me know if you need anything else.",
+                "No problem! Feel free to ask any other questions.",
+                "Glad I could help! Have a great day!"
+            ]
+        }
+    ]
+}

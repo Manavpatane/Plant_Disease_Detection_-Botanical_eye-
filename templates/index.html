@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plant Disease Detection</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/navbar.css">
+    <style>
+        body {
+    background: url('static/images/AdobeStock_662817948_Preview.jpeg') no-repeat center center/cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+} 
+
+        /* Chatbot Styles */
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: green;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .chat-container {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 380px; /* Increased width */
+            height: 400px; /* Ensures enough space */
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-header {
+            background: green;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #chat {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        #chat {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background: #f8f8f8;
+    max-height: 320px;
+}
+
+/* User Message */
+.user-message {
+    align-self: flex-end;
+    background: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin: 5px;
+    max-width: 70%;
+}
+
+/* Bot Message */
+.bot-message {
+    align-self: flex-start;
+    background: #ddd;
+    color: black;
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin: 5px;
+    max-width: 70%;
+}
+
+
+input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    height: 40px; /* Ensures it matches button height */
+    width: 100%; /* Makes sure it takes full available space */
+    box-sizing: border-box;
+}
+#chat-button{
+    background: green;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    height: 40px; /* Matches input field height */
+    min-width: 80px; /* Prevents button from being too large */
+    transition: 0.3s;
+}
+button {
+    background: green;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    height: 40px; /* Matches input field height */
+    min-width: 80px; /* Prevents button from being too large */
+    transition: 0.3s;
+}
+
+button:hover {
+    background: darkgreen;
+}
+
+    </style>
+    
+</head>
+<body>
+   <!-- Navigation Bar -->
+   <nav class="navbar">
+    <div class="logo">Botanical Eye</div>
+    <ul class="nav-links">
+        <li><a href="http://localhost:8080/home/home.html">Home</a></li>
+        <li><a href="http://127.0.0.1:5000/">Prediction</a></li>
+        <li><a href="http://127.0.0.1:5000/disease-prediction">Plot Graph</a></li>
+        <li><a href="http://localhost:8080/fetch_plant_details/search_disease.html">Plant Info</a></li>
+        <li><a href="http://localhost:8080/medicine_store/">Plant Medicine Store</a></li>
+        <li><a href="http://localhost:8080/login_signup_page/index.html" class="logout-btn">Logout</a></li>
+    </ul>
+</nav>
+
+
+
+    <h1>Welcome to Plant Disease Detection</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <label>Upload Image:</label>
+        <input type="file" name="file" required>
+        <button type="submit">Predict</button>
+        <button><a href="/disease-prediction"><span>Go to Disease Probability Plot</span></a></button>
+    </form>
+
+    <!-- Chatbot Icon & Container -->
+    <div class="chat-icon" onclick="toggleChat()">💬</div>
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">Plant Disease Detection Chatbot</div>
+        <div id="chat"></div>
+        <div class="input-container">
+            <input type="text" id="message" placeholder="Type your message here" onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()" id="chat-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chatContainer = document.getElementById("chatContainer");
+            chatContainer.style.display = chatContainer.style.display === "none" || chatContainer.style.display === "" ? "block" : "none";
+        }
+        
+        async function sendMessage() {
+    const message = document.getElementById("message").value.trim();
+    if (!message) return;
+
+    const chatDiv = document.getElementById("chat");
+
+    // Append user message
+    const userMsg = document.createElement("div");
+    userMsg.classList.add("user-message");
+    userMsg.textContent = `You: ${message}`;
+    chatDiv.appendChild(userMsg);
+
+    document.getElementById("message").value = ""; // Clear input
+
+    try {
+        const response = await fetch("/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ message }),
+        });
+        const data = await response.json();
+
+        // Append bot response
+        const botMsg = document.createElement("div");
+        botMsg.classList.add("bot-message");
+        botMsg.textContent = `Bot: ${data.response}`;
+        chatDiv.appendChild(botMsg);
+
+        chatDiv.scrollTop = chatDiv.scrollHeight; // Auto-scroll to latest message
+    } catch (error) {
+        console.error("Error fetching bot response:", error);
+    }
+}
+
+    </script>
+</body>
+</html>
